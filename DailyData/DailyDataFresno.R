@@ -7,13 +7,19 @@
 # Load libraries:
 
 rm(list=ls(all=TRUE))
+
+packages <- c("tools","xts","data.table","lubridate","zoo","TSA")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))
+}
+for (p in packages){print(p)}
+
 library(tools)
 library(xts)
 library(data.table)
 library(lubridate)
 library(z00)
 library(TSA)
-library(stats)
 
 # 1. Import the Data.
 
